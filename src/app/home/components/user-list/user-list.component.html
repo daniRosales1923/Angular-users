@@ -1,11 +1,17 @@
-<div class="item__list" fxFlex=100% fxFlex.gt-xs="50%">
-  <mat-list>
-    <mat-list-item *ngFor="let user of users$ | async" >
-      <mat-icon matListIcon>
-        <i class="material-icons">person </i>
-      </mat-icon>
-      <h2 matLine> {{user.name}}</h2>
-
-    </mat-list-item>
-  </mat-list>
+<div fxLayout="column">
+  <div class="item__list" fxFlex=100% fxFlex.gt-xs="50%">
+    <mat-list>
+      <mat-list-item *ngFor="let user of users$ | async" >
+        <mat-icon matListIcon>
+          <i class="material-icons">person </i>
+        </mat-icon>
+        <h2 matLine> {{user.name}}</h2>
+  
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div  class="bacground" fxFlex=100% >
+  hola
+  </div>
+  
 </div>

@@ -1,3 +1,12 @@
 .item__list{
     background-image: linear-gradient(to bottom, rgb(216, 103, 103) 45%, rgba(151, 151, 228, 0.096) 85%);
 }
+
+.bacground{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: url(../../../../assets/images/bacground1.png) left no-repeat,
+    url(../../../../assets/images/autors.jpg) right;
+    height: 500px;
+}
