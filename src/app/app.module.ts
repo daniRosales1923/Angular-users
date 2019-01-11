@@ -5,6 +5,21 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
+import { UserListModule } from './home/components/user-list/user-list.module';
+import { reducers } from './shared/store/reducers';
+import { effects } from './shared/store/effects';
+import { UserService } from './shared/services/users.service';
+import { AppRoutingModule } from './app.routing';
+import { DetailUserModule } from './home/components/detail-user/detail-user.module';
+
+
+export const STORE_CONFIG = StoreModule.forRoot(reducers);
+export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
 
 @NgModule({
   declarations: [
@@ -12,11 +27,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     BrowserModule,
-    FlexLayoutModule,
     BrowserAnimationsModule,
-    NavbarModule
+    AppRoutingModule,
+    HttpClientModule,
+    FlexLayoutModule,
+    NavbarModule,
+    UserListModule,
+    DetailUserModule,
+    STORE_CONFIG,
+    EFFECTS_CONFIG,
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+    EffectsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
