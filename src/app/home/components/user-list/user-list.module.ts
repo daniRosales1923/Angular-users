@@ -5,6 +5,7 @@ import {MatListModule} from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 const routes : Routes =[{
     path: '',
@@ -15,7 +16,8 @@ const COMMON_IMPORTS = [
     CommonModule,
     FlexLayoutModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
 ];
 const COMMON_DECLARATIONS = [UserListComponent];
 
