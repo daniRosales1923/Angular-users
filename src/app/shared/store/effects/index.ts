@@ -1,8 +1,8 @@
 import { UserEffects } from './users.effects';
-import { DetailEffects } from './detail-user.effects';
+import { PostEffects } from './Post-user.effects';
 
 
 export const effects = [
     UserEffects,
-    DetailEffects,
+    PostEffects,
 ]

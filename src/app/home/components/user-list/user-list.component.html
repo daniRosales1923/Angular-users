@@ -1,7 +1,7 @@
 <div fxLayout="column">
   <div class="item__list" fxFlex=100% fxFlex.gt-xs="50%">
     <mat-list>
-      <mat-list-item *ngFor="let user of users$ | async" >
+      <mat-list-item *ngFor="let user of users$ | async" [routerLink] = "['/detail-user',user.id]" >
         <mat-icon matListIcon>
           <i class="material-icons">person </i>
         </mat-icon>

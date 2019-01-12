@@ -1,13 +1,13 @@
 import { ActionReducerMap } from '@ngrx/store';
 import * as fromUser from './users.reducers';
-import * as fromDetail from './detail-user.reducers';
+import * as fromPost from './post-user.reducers';
 
 export interface AppState{
-    user: fromUser.State;
-    detail: fromDetail.State;
+    user: fromUser.stateUser;
+    post: fromPost.statePost;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-    user: fromUser.reducer,
-    detail: fromDetail.reducer,
+    user: fromUser.reducerUser,
+    post: fromPost.reducerPost,
 };

@@ -15,7 +15,7 @@ import { reducers } from './shared/store/reducers';
 import { effects } from './shared/store/effects';
 import { UserService } from './shared/services/users.service';
 import { AppRoutingModule } from './app.routing';
-import { DetailUserModule } from './home/components/detail-user/detail-user.module';
+import { PostUserModule } from './home/components/post-user/post-user.module';
 
 
 export const STORE_CONFIG = StoreModule.forRoot(reducers);
@@ -33,7 +33,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     FlexLayoutModule,
     NavbarModule,
     UserListModule,
-    DetailUserModule,
+    PostUserModule,
     STORE_CONFIG,
     EFFECTS_CONFIG,
     StoreDevtoolsModule.instrument({
