@@ -1,39 +1,39 @@
-import * as fromUser from '../actions/users.actions';
-import { User } from '../../../home/models/users.model';
+import * as fromPost from '../actions/Post-user.actions';
+import { Post } from 'src/app/home/models/post.model';
 
-export interface stateUser{
+export interface statePost{
     loading: boolean;
     error: any;
-    users: User [];
+    post: Post [];
 }
 
-const InitialState: stateUser = {
+const InitialState: statePost = {
     loading: false,
     error: null,
-    users: [],
+    post: [],
 };
 
-export function reducerUser(
-    state: stateUser = InitialState, 
-    action: fromUser.UserActionUnion
-    ): stateUser {
+export function reducerPost(
+    state: statePost = InitialState, 
+    action: fromPost.UserActionUnion
+    ): statePost {
     switch(action.type){
-        case fromUser.UserActionTypes.Get_USER:{
+        case fromPost.UserActionTypes.Get_POST:{
             return {
                 ...state,
                 loading: true,
                 error: null
             };
         }
-        case fromUser.UserActionTypes.Get_SUCCESS_USER:{
+        case fromPost.UserActionTypes.Get_POST_SUCCESS:{
             return{
                 ...state,
                 loading: true,
-                users: action.payload,
+                post: action.payload,
                 error: null
             };
         }
-        case fromUser.UserActionTypes.Get_ERROR_USER:{
+        case fromPost.UserActionTypes.Get_POST_ERROR:{
             return{
                 ...state,
                 loading: false,

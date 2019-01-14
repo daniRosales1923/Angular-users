@@ -10,8 +10,8 @@ import { UserService } from '../../services/users.service';
 export class UserEffects{
 
     @Effect()
-    LoadingUser$: Observable<Action> = this.actions$.pipe(
-        ofType(fromUser.UserActionTypes.Get_All_USER),
+    LoadingUser$: Observable<Action> = this.actions.pipe(
+        ofType(fromUser.UserActionTypes.Get_USER),
         mergeMap(action => this.userService.getUsers().pipe(
             map(users => new fromUser.GetSuccessUser(users)),
             catchError((error)=> of(new fromUser.GetErrorUser(error)))
@@ -20,7 +20,7 @@ export class UserEffects{
 
     constructor(
         private userService: UserService,
-        private actions$: Actions
+        private actions: Actions
     ){}
 
 }
