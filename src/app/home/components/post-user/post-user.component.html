@@ -24,7 +24,7 @@
     <mat-list fxGrap="10px">
       <mat-list-item *ngFor="let post of posts$ | async">
         <mat-icon matListIcon>
-          <i class="material-icons">done </i>
+          <i class="material-icons" [routerLink]= "['/detail-message',post.id]">done </i>
         </mat-icon>
         <mat-card-content fxLayout="column">
           <strong ngClass.xs="section-post__title">{{post.id}}.- {{post.title}} </strong>          

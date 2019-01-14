@@ -9,6 +9,10 @@ const routes: Routes =[
     {
         path: '',
         loadChildren: './components/post-user/post-user.module#PostUserModule'
+    },
+    {
+        path: '',
+        loadChildren: './components/message-user/message-user.module#MessageUserModule'
     }
 ]
 
