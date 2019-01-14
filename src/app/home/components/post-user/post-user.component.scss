@@ -3,7 +3,7 @@
         width: 100px;
         margin: 25px;
         border: 1px solid gray;
-        box-shadow: 17px 11px 17px -5px rgba(115,96,115,1);
+        box-shadow: 17px 11px 17px -5px lightgray;
 
         &__header-img{
             background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -33,4 +33,11 @@ mat-list{
 }
 mat-list-item {
     border-bottom: .2px solid lightgray;
+}
+
+.item{
+    &-link{
+        text-decoration: none;
+        color: blue;
+    }
 }
