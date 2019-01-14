@@ -5,6 +5,7 @@ import { PostUserComponent } from './post-user.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 const routes : Routes =[{
     path: ':id',
@@ -14,6 +15,7 @@ const routes : Routes =[{
 const COMMON_IMPORTS = [
     CommonModule,
     FlexLayoutModule,
+    MatCardModule,
     MatIconModule,
     MatListModule
 ];
