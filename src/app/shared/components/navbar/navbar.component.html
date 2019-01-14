@@ -1,3 +1,21 @@
-<mat-toolbar>
-  <span>My Application</span>
+<mat-toolbar
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  ngStyle.lg="padding: 0 72px"
+  ngStyle.xl="padding: 0 120px"
+  color="primary">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img height="40px" src="assets/images/logo.png" alt=" Logo" />
+    <span>Authors</span>
+  </div>
+  <div fxShow.gt-xs="true" fxHide fxLayout="row" fxLayoutGap="24px">
+    <button mat-button >USERS</button> 
+    <button mat-button>DETAIL USER</button>
+    <button mat-button>DETAIL PUBLICATION</button>
+  </div>
+
+  <button fxShow.lt-sm="true" fxHide mat-icon-button>
+    <mat-icon aria-label="Icon-button with a menu">menu</mat-icon>
+  </button>
+
 </mat-toolbar>
