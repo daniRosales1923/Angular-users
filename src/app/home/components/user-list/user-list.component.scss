@@ -33,3 +33,9 @@
     background-image: url(../../../../assets/images/icono-user.png);
     background-size: cover;
 }
+
+mat-icon{
+    &:hover{
+        cursor: pointer;
+    }
+}
