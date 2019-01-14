@@ -1,31 +1,31 @@
-import * as fromDetail from '../actions/detail-user.actions';
+import * as fromPost from '../actions/Post-user.actions';
 import { Post } from 'src/app/home/models/post.model';
 
-export interface State{
+export interface statePost{
     loading: boolean;
     error: any;
     post: Post [];
 }
 
-const InitialState: State = {
+const InitialState: statePost = {
     loading: false,
     error: null,
     post: [],
 };
 
-export function reducer(
-    state: State = InitialState, 
-    action: fromDetail.UserActionUnion
-    ): State {
+export function reducerPost(
+    state: statePost = InitialState, 
+    action: fromPost.UserActionUnion
+    ): statePost {
     switch(action.type){
-        case fromDetail.UserActionTypes.Get_All_DETAIL:{
+        case fromPost.UserActionTypes.Get_POST:{
             return {
                 ...state,
                 loading: true,
                 error: null
             };
         }
-        case fromDetail.UserActionTypes.Get_All_SUCCESS_DETAIL:{
+        case fromPost.UserActionTypes.Get_POST_SUCCESS:{
             return{
                 ...state,
                 loading: true,
@@ -33,7 +33,7 @@ export function reducer(
                 error: null
             };
         }
-        case fromDetail.UserActionTypes.Get_All_ERROR_DETAIL:{
+        case fromPost.UserActionTypes.Get_POST_ERROR:{
             return{
                 ...state,
                 loading: false,

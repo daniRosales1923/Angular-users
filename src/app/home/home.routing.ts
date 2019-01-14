@@ -8,7 +8,7 @@ const routes: Routes =[
     },
     {
         path: '',
-        loadChildren: './components/detail-user/detail-user.module#DetailUserModule'
+        loadChildren: './components/post-user/post-user.module#PostUserModule'
     }
 ]
 

@@ -15,10 +15,9 @@ export class UserListComponent implements OnInit {
   
   constructor(private store: Store<AppState>) { 
     this.users$ = this.store.select(getUsers);
-
   }
 
   ngOnInit() {    
-    this.store.dispatch( new fromActions.GetAllUser );
+    this.store.dispatch( new fromActions.GetUser );
   }
 }
