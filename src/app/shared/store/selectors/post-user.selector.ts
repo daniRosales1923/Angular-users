@@ -15,7 +15,9 @@ export const getDetail = createSelector(
     
 );
 
-export const getDetailId = (id) => createSelector(
+export const getDetailUserId = (id) => createSelector(
     getDetailState,
-    state =>  state[id]
+    state =>  state.post.filter(data=>{
+        return data.userId==id;
+    })
 );

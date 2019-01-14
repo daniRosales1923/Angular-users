@@ -8,23 +8,6 @@ import { PostService } from '../../services/post.service';
 
 @Injectable()
 export class PostEffects{
-    @Effect()
-    LoadingUsers$: Observable<Action> = this.actions.pipe(
-        ofType(fromPost.UserActionTypes.Get_POST),
-        mergeMap(action => this.detailService.getDetail().pipe(
-            map(detail => new fromPost.GetPostSuccess(detail)),
-            catchError((error)=> of(new fromPost.GetPostError(error)))
-        ))
-    );
-
-    // @Effect()
-    // LoadingUser$: Observable<Action> = this.actions$.pipe(
-    //     ofType(fromPost.UserActionTypes.Get_All_DETAIL),
-    //     mergeMap((action:fromPost.GetAllDetail) => this.detailService.getByIdUser(action.id).pipe(
-    //         map(detail => new fromPost.GetSuccessDetail(detail)),
-    //         catchError((error)=> of(new fromPost.GetErrorDetail(error)))
-    //     ))
-    // );
 
     @Effect() 
     loadPost$ = this.actions.pipe(

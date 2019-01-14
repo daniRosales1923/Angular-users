@@ -3,15 +3,16 @@
       <mat-card class="detail-card" fxFlex.gt-xs="50%">
         <mat-card-header>
           <div mat-card-avatar class="detail-card__header-img"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-title *ngIf="user$ | async as user" >{{user.name}}</mat-card-title>
           <mat-card-subtitle>Detail User</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content fxLayout="column" fxAling="center">
-          <p>Email: </p>
-          <p>Address: </p>
-          <p>Phone:</p>
-          <p>Website: </p>
-          <p>Company: </p>
+        <mat-card-content fxLayout="column" fxAling="center" *ngIf="user$ | async as user">
+          <p>Email: {{ user.email }} </p>
+          <p>Address: {{user.address.street}} {{user.address.suite}}, {{user.address.city}}</p>
+          <p>Phone: {{user.phone}}</p>
+          <p>Website: <a class="item-link" href="">{{user.website}}</a> </p>
+          <p>Company: {{user.company.name}}</p>
+          <!-- <pre>{{user|json}}</pre> -->
         </mat-card-content>
       </mat-card>
     <div class="detail-img" fxFlex.gt-xs="50%" fxHide.xs = "falso"  fxShow.xs = " false " ></div>
@@ -24,7 +25,7 @@
     <mat-list fxGrap="10px">
       <mat-list-item *ngFor="let post of posts$ | async">
         <mat-icon matListIcon>
-          <i class="material-icons">done </i>
+          <i class="material-icons" [routerLink]= "['/detail-message',post.id]">done </i>
         </mat-icon>
         <mat-card-content fxLayout="column">
           <strong ngClass.xs="section-post__title">{{post.id}}.- {{post.title}} </strong>          
