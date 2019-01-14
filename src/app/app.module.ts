@@ -17,9 +17,6 @@ import { UserService } from './shared/services/users.service';
 import { AppRoutingModule } from './app.routing';
 import { PostUserModule } from './home/components/post-user/post-user.module';
 import { PostService } from './shared/services/post.service';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MessageService } from './shared/services/message.service';
 import { MessageUserModule } from './home/components/message-user/message-user.module';
 
