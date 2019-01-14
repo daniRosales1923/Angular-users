@@ -16,11 +16,12 @@ import { effects } from './shared/store/effects';
 import { UserService } from './shared/services/users.service';
 import { AppRoutingModule } from './app.routing';
 import { PostUserModule } from './home/components/post-user/post-user.module';
-import { PostService } from './shared/services/post.service'
-import { DetailUserModule } from './home/components/detail-user/detail-user.module';
+import { PostService } from './shared/services/post.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MessageService } from './shared/services/message.service';
+import { MessageUserModule } from './home/components/message-user/message-user.module';
 
 export const STORE_CONFIG = StoreModule.forRoot(reducers);
 export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
@@ -41,6 +42,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     NavbarModule,
     UserListModule,
     PostUserModule,
+    MessageUserModule,
     STORE_CONFIG,
     EFFECTS_CONFIG,
     StoreDevtoolsModule.instrument({
@@ -49,7 +51,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     }),
     EffectsModule
   ],
-  providers: [UserService,PostService],
+  providers: [UserService,PostService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
