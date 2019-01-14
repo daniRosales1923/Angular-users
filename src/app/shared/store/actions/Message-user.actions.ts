@@ -15,7 +15,7 @@ export class GetMessage implements Action{
 export class GetMessageSuccess implements Action{
     readonly type = MessageActionTypes.GET_MESSAGE_SUCCESS
 
-    constructor(public payload:  Message[]){}
+    constructor(public id:any,public payload:  Message[]){}
 }
 
 export class GetMessageError implements Action{

@@ -12,7 +12,7 @@ export class MessageEffects{
     LoadingMessage$: Observable<Action> = this.actions.pipe(
         ofType(fromMessage.MessageActionTypes.GET_MESSAGE),
         mergeMap(action => this.messageService.getMessage().pipe(
-            map(detail => new fromMessage.GetMessageSuccess(detail)),
+            map((detail,id) => new fromMessage.GetMessageSuccess(id,detail)),
             catchError((error)=> of(new fromMessage.GetMessageError(error)))
         ))
     );
@@ -22,7 +22,7 @@ export class MessageEffects{
         ofType(fromMessage.MessageActionTypes.GET_MESSAGE),
         map((action: fromMessage.GetMessage) => action.id),
         mergeMap(id => this.messageService.getMessageById(id).pipe(
-            map(response => new fromMessage.GetMessageSuccess(response)),
+            map((response,id )=> new fromMessage.GetMessageSuccess(id,response)),
             catchError((error)=> of(new fromMessage.GetMessageError(error)))
         ))
     );

@@ -8,7 +8,7 @@ import { User } from "../../models/users.model";
 import { ActivatedRoute } from '@angular/router';
 import { getUsers } from 'src/app/shared/store/selectors/users.selectors';
 import { PostService } from 'src/app/shared/services/post.service';
-import { getDetail } from 'src/app/shared/store/selectors/post-user.selector';
+import { getDetail, getDetailUserId } from 'src/app/shared/store/selectors/post-user.selector';
 @Component({
   selector: "app-post-user",
   templateUrl: "./post-user.component.html",
@@ -23,7 +23,7 @@ export class PostUserComponent implements OnInit {
   constructor(private store: Store<AppState>, private route: ActivatedRoute, private postService: PostService) {
     this.idUser = this.route.snapshot.params.id;
     // this.user$ = this.store.select(getUsers);
-    this.posts$ = this.store.select(getDetail);
+    this.posts$ = this.store.select(getDetailUserId(this.idUser));
   }
 
   ngOnInit() {

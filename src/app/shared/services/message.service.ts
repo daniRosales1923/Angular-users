@@ -16,6 +16,6 @@ export class MessageService {
     }
 
     getMessageById(id) {
-        return this.http.get<Message[]>(this.url+`?id=/${id}`);
+        return this.http.get<Message[]>(this.url+`?id=${id}`);
     }
 }

@@ -3,12 +3,14 @@ import { Message } from 'src/app/home/models/message.model';
 
 export interface stateMessage{
     loading: boolean;
+    id: any;
     error: any;
     message: Message [];
 }
 
 const InitialState: stateMessage = {
     loading: false,
+    id: null,
     error: null,
     message: [],
 };
@@ -22,6 +24,7 @@ export function reducerMessage (
             return{
                 ...state,
                 loading: true,
+                id: action.id,
                 error: null
             };
         }
@@ -29,6 +32,7 @@ export function reducerMessage (
             return{
                 ...state,
                 loading: true,
+                id: action.id,
                 message: action.payload,
                 error: null
             };
