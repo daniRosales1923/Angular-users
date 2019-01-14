@@ -16,6 +16,7 @@ import { effects } from './shared/store/effects';
 import { UserService } from './shared/services/users.service';
 import { AppRoutingModule } from './app.routing';
 import { PostUserModule } from './home/components/post-user/post-user.module';
+import { PostService } from './shared/services/post.service';
 
 
 export const STORE_CONFIG = StoreModule.forRoot(reducers);
@@ -42,7 +43,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     }),
     EffectsModule
   ],
-  providers: [UserService],
+  providers: [UserService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
