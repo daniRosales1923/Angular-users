@@ -1,19 +1,25 @@
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { CommonModule } from '@angular/common';
-import { DetailUserComponent } from './detail-user.component';
+import { PostUserComponent } from './post-user.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 const routes : Routes =[{
-    path: '',
-    component: DetailUserComponent
+    path: ':id',
+    component: PostUserComponent
 }]
 
 const COMMON_IMPORTS = [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatIconModule,
+    MatListModule
 ];
-const COMMON_DECLARATIONS = [DetailUserComponent];
+const COMMON_DECLARATIONS = [PostUserComponent];
 
 @NgModule({
     imports: [COMMON_IMPORTS, RouterModule.forChild(routes)],
@@ -21,7 +27,7 @@ const COMMON_DECLARATIONS = [DetailUserComponent];
     exports: COMMON_DECLARATIONS
 })
 
-export class DetailUserModule{}
+export class PostUserModule{}
 
 export default {
     COMMON_IMPORTS,

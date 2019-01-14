@@ -1,0 +1,39 @@
+<div class="detail" fxLayout="column">
+  <div fxLayout="column" fxLayout.gt-xs="row">
+      <mat-card class="detail-card" fxFlex.gt-xs="50%">
+        <mat-card-header>
+          <div mat-card-avatar class="detail-card__header-img"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Detail User</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout="column" fxAling="center">
+          <p>Email: </p>
+          <p>Address: </p>
+          <p>Phone:</p>
+          <p>Website: </p>
+          <p>Company: </p>
+        </mat-card-content>
+      </mat-card>
+    <div class="detail-img" fxFlex.gt-xs="50%" fxHide.xs = "falso"  fxShow.xs = " false " ></div>
+  </div>
+  <div class="section-post" fxLayout="column" fxGrap="20px">
+    <mat-card-subtitle>
+      <i class="material-icons">bookmarks</i> 
+      Publications
+    </mat-card-subtitle>
+    <mat-list fxGrap="10px">
+      <mat-list-item *ngFor="let post of posts$ | async">
+        <mat-icon matListIcon>
+          <i class="material-icons">done </i>
+        </mat-icon>
+        <mat-card-content fxLayout="column">
+          <strong ngClass.xs="section-post__title">{{post.id}}.- {{post.title}} </strong>          
+          
+          <!-- <p>{{post.body}}</p> -->
+        </mat-card-content>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  
+</div>
+

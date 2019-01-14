@@ -15,6 +15,8 @@ import { reducers } from './shared/store/reducers';
 import { effects } from './shared/store/effects';
 import { UserService } from './shared/services/users.service';
 import { AppRoutingModule } from './app.routing';
+import { PostUserModule } from './home/components/post-user/post-user.module';
+import { PostService } from './shared/services/post.service'
 import { DetailUserModule } from './home/components/detail-user/detail-user.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -38,7 +40,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     MatButtonModule,
     NavbarModule,
     UserListModule,
-    DetailUserModule,
+    PostUserModule,
     STORE_CONFIG,
     EFFECTS_CONFIG,
     StoreDevtoolsModule.instrument({
@@ -47,7 +49,7 @@ export const EFFECTS_CONFIG = EffectsModule.forRoot(effects);
     }),
     EffectsModule
   ],
-  providers: [UserService],
+  providers: [UserService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
