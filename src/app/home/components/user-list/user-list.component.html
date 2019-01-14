@@ -1,3 +1,5 @@
+<div class="item__title" fxLayoutAlign="center center">
+  <span>List of users</span>
 <div fxLayout="column">
   <div class="item__list" fxFlex=100% fxFlex.gt-xs="50%">
     <mat-list>
@@ -14,4 +16,15 @@
   hola
   </div>
   
+</div>
+
+<div fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="center center">
+  <mat-card class="item-card" *ngFor="let user of users$ | async" >
+      <i class="material-icons" fxLayoutAlign="end center">more_horiz</i>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{user.name}}</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
 </div>

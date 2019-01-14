@@ -1,3 +1,19 @@
+.item{
+
+    &-card {
+        width: 300px;
+        height: 100px;
+        background-color: beige;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+    &__title{
+        font-size: 3em;
+        margin: 15px;
+    }
+}
+
 .item__list{
     background-image: linear-gradient(to bottom, rgb(216, 103, 103) 45%, rgba(151, 151, 228, 0.096) 85%);
 }
@@ -9,4 +25,11 @@
     background: url(../../../../assets/images/bacground1.png) left no-repeat,
     url(../../../../assets/images/autors.jpg) right;
     height: 500px;
+}
+
+  
+.example-header-image {
+    width: 50px;
+    background-image: url(../../../../assets/images/icono-user.png);
+    background-size: cover;
 }
