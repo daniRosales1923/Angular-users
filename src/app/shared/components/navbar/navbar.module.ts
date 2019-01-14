@@ -5,6 +5,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { NavbarComponent } from './navbar.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 
 const COMMON_IMPORTS = [
@@ -13,7 +14,11 @@ const COMMON_IMPORTS = [
     MatButtonModule, 
     MatIconModule,
     FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
     RouterModule
+
 ];
 const COMMON_DECLARATIONS = [NavbarComponent];
 
