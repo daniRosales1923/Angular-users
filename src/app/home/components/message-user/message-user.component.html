@@ -1,3 +1,26 @@
-<div class="detail-message" *ngFor = "let message of messages$ | async">
-  {{message.id}}
+<div class="comments" fxLayout="column" fxGrap="40px">
+  <div class="mat-title" fxFlexAlign="center">Commnets</div>
+  <div class="comments__content" fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+    <div class="comments__content-img" fxFlex="50%">
+    </div>
+    <div class="detail-message"  fxLayout="column" fxFlex="50%"  >
+      <mat-list fxGrap="10px">
+        <mat-list-item > 
+          <div *ngFor="let msj of messages$ | async" fxLayout="column" fxGrap="10px">
+            <strong>Name:</strong>
+            <p class="mat-body">{{msj.name}}</p>
+            <strong>Email:</strong>
+            <p class="mat-body"> {{msj.email}}</p>
+            <strong>Comment:</strong>
+            <mat-card>
+              <p class="mat-body">{{msj.body}}</p>
+            </mat-card>
+
+          </div>    
+            <!-- <pre>{{messages$|async| json}}</pre> -->
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
 </div>

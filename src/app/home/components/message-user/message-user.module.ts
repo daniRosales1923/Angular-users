@@ -3,6 +3,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MessageUserComponent } from './message-user.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 const routes : Routes =[{
     path: ':id',
@@ -11,7 +14,10 @@ const routes : Routes =[{
 
 const COMMON_IMPORTS = [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule
 ];
 const COMMON_DECLARATIONS = [MessageUserComponent];
 

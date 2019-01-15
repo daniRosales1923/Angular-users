@@ -12,3 +12,10 @@ export const getMessage = createSelector(
     getMessageState,
     state => state.message
 );
+
+export const getMessageById = (id) => createSelector(
+    getMessageState,
+    state =>  state.message.filter(data=>{
+        return data.id==id;
+    })
+);

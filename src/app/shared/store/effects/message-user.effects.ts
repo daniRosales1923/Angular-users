@@ -1,22 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
-import { Action } from '@ngrx/store';
 import { MessageService } from '../../services/message.service';
 import * as fromMessage from '../actions/Message-user.actions'
 import { mergeMap, map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class MessageEffects{
-    @Effect() 
-    LoadingMessage$: Observable<Action> = this.actions.pipe(
-        ofType(fromMessage.MessageActionTypes.GET_MESSAGE),
-        mergeMap(action => this.messageService.getMessage().pipe(
-            map((detail,id) => new fromMessage.GetMessageSuccess(id,detail)),
-            catchError((error)=> of(new fromMessage.GetMessageError(error)))
-        ))
-    );
-
     @Effect() 
     LoadMessage$ = this.actions.pipe(
         ofType(fromMessage.MessageActionTypes.GET_MESSAGE),
