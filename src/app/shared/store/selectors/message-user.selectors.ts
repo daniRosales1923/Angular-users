@@ -16,6 +16,6 @@ export const getMessage = createSelector(
 export const getMessageById = (id) => createSelector(
     getMessageState,
     state =>  state.message.filter(data=>{
-        return data.id==id;
+        return data.postId==id;
     })
 );

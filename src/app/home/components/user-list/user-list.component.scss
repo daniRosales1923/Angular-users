@@ -8,10 +8,6 @@
         margin: 5px;
     }
 
-    &__title{
-        font-size: 3em;
-        margin: 15px;
-    }
 }
 
 .item__list{
@@ -27,9 +23,16 @@
     height: 500px;
 }
 
-  
+
 .example-header-image {
     width: 50px;
     background-image: url(../../../../assets/images/icono-user.png);
     background-size: cover;
+}
+
+.title{
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5em;
+    color: #673ab7;
+    margin: 15px;
 }

@@ -3,3 +3,10 @@ mat-icon{
         cursor: pointer;
     }
 }
+
+.item-logo{
+    outline: none;
+    &:hover{
+        cursor:pointer;
+    }
+}

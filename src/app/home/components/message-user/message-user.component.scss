@@ -1,15 +1,36 @@
 .comments{
-    background-color: lightgrey;
-    &__content-img{
-        height: 500px;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-image: url("../../../../assets/images/comments.png");
+    background-color: rgb(243, 217, 217);
+}
+
+.item{
+    &__title{
+        height: 155px;
+        &-img{
+            width: 150px;
+            height: 150px;
+            border-radius: 300px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../../../assets/images/comments.png");
+        }
+    }
+    &-card{
+        width: 400px;
+        height: 225px;
+        margin: 5px
+    }
+
+    &-comment{
+        width: 350px;
+        padding: 15px;
+        background-color: white;
+        border: 1px solid lightgray;
     }
 }
 
-mat-card{
-    width: 400px;
-    height: 150px;;
+.title{
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5em;
+    color: #673ab7;
 }
